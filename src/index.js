@@ -9,11 +9,12 @@ import { createStore } from "redux";
 import rootReducer from "./modules";
 
 const store = createStore(rootReducer);
-console.log(store.getState());
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );
